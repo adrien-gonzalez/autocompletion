@@ -9,6 +9,20 @@
 	background-attachment: fixed;
 }
 
+header input[type="button"]{
+
+	padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#478bf9;
+	color:#fff;
+	width:60px;
+	border:none;
+	font-size: 10px;
+	transition: 0.5s;
+
+}
+
+
 .form_research{
 
 	display: flex;
@@ -42,7 +56,6 @@
 
 .research input[type="button"]{
 	
-	width: 100px;
 	padding:6px 0 6px 0;
 	font:bold 13px Arial;
 	background:#478bf9;
@@ -53,7 +66,7 @@
 	transition: 0.5s;
 }
 
-.research input[type="button"]:hover{
+.research input[type="button"]:hover, header input[type="button"]:hover{
 	
 	cursor: pointer;
 	background: #25477F;
@@ -67,9 +80,17 @@ body{
 header{
 
 	width: 100%;
-	background-color: grey;
+	background-color: rgba(37, 71, 127, .75);
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+header div{
+
+	display: flex;
+	width: 57%;
+	justify-content: space-between;
 	align-items: center;
 }
 
@@ -77,4 +98,18 @@ ul{
 	display: flex;
 	justify-content: center;
 	list-style: none;
+
+}
+
+
+@media (max-width: 1200px) {
+  header ul {
+    display: none;
+  }
+  header div{
+
+  	display: flex;
+  	justify-content: center;
+  	width: 100%;
+  }
 }

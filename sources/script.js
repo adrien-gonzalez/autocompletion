@@ -18,12 +18,12 @@ function refuserToucheEntree(event)
 
 
 
-$(document).ready(function(){
-	$("#recherche").click(function(){
-  	
-	  	search = $("#search").val();
 
-		$.ajax({
+function ajax()
+{
+
+
+   $.ajax({
 
 			type:"GET",
 			url:"../fonctions/research.php",
@@ -49,7 +49,7 @@ $(document).ready(function(){
 			          			$("#result-search").append('<tr id='+i+'></tr>');
 			          			var result = JSON.parse(data)[i]; 
 			          	
-					         	for(j=0;j <Object.keys(result).length; j++  )
+					         	for(j=0;j <Object.keys(result).length; j++ )
 					         	{
 					         		var champ = Object.keys(result)[j];
 					         		$("#"+i).append('<td>'+ result[champ]+'</td>');
@@ -64,6 +64,23 @@ $(document).ready(function(){
 					}
 				}
 			});
+  }
+
+
+
+$(document).ready(function(){
+	$("#recherche").click(function(){
+  	
+		search = $("#search").val();
+	  	ajax();	
+		});
+
+	$("#recherche_barre").click(function(){
+  	
+		search = $("#search_barre").val();
+		ajax();	
 		});
 });
    
+
+
