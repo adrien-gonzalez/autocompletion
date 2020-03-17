@@ -26,7 +26,7 @@ function ajax()
    $.ajax({
 
 			type:"GET",
-			url:"../fonctions/research.php",
+			url:"fonctions/research.php",
 			data : {search: encodeURIComponent(search)},
 		
 				success:function(data)
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	$("#recherche").click(function(){
   	
 		search = $("#search").val();
-	  	
+	  	ajax();
 		});
 
 	$("#recherche_barre").click(function(){
