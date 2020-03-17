@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 16 mars 2020 à 11:18
+-- Généré le :  mar. 17 mars 2020 à 08:07
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -38,9 +38,9 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
   `type2_pok` varchar(255) NOT NULL,
   `HP` varchar(5) NOT NULL,
   `Attaque` varchar(5) NOT NULL,
-  `Défense` varchar(5) NOT NULL,
-  `Sp. Attaque` varchar(5) NOT NULL,
-  `Sp. Défense` varchar(5) NOT NULL,
+  `Defense` varchar(5) NOT NULL,
+  `Sp_Attaque` varchar(5) NOT NULL,
+  `Sp_Defense` varchar(5) NOT NULL,
   `Vitesse` varchar(5) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_pok` (`id`)
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
 -- Déchargement des données de la table `pokemon`
 --
 
-INSERT DELAYED INTO `pokemon` (`id`, `nom_pok`, `type1_pok`, `type2_pok`, `HP`, `Attaque`, `Défense`, `Sp. Attaque`, `Sp. Défense`, `Vitesse`) VALUES
+INSERT DELAYED INTO `pokemon` (`id`, `nom_pok`, `type1_pok`, `type2_pok`, `HP`, `Attaque`, `Defense`, `Sp_Attaque`, `Sp_Defense`, `Vitesse`) VALUES
 (1, 'Bulbizarre', 'Herbre', 'Poison', '45', '49', '49', '65', '65', '45'),
 (2, 'Herbizarre', 'Herbe', 'Poison', '60', '62', '63', '80', '80', '60'),
 (3, 'Florizarre', 'Herbe', 'Poison', '80', '82', '83', '100', '100', '80'),
