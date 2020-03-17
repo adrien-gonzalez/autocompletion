@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
 
 *{
 	outline: none;
+	font-family: 'Merriweather Sans', sans-serif;
 }
 
 .accueil{
