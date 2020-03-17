@@ -32,8 +32,8 @@ session_start()
 	   	       {
 	   	       	$search = htmlspecialchars($_GET['search']);
 	
-	   	       	$articles = $bdd->query('SELECT * FROM articlesPok WHERE ? like"%'.$search.'%" ORDER BY id DESC ');
-	   	       	var_dump($articles);
+	   	       	$articlesPok = $bdd->query('SELECT * FROM pokemon WHERE nom_pok like"%'.$search.'%" ORDER BY id DESC ');
+	   	       	var_dump($articlesPok);
 	   	       	echo "string";
 	   	       }
 
@@ -41,10 +41,11 @@ session_start()
 
 	   	     <ul>
 	   	     	 <?php
-	   	     	     while ($a = $articles->fetch()) 
+	   	     	     while ($a = $articlesPok->fetch()) 
 
 	   	     	     { ?>
-	   	     	     	<li><?= $a['titre'] ?></li>
+	   	     	     	<li><?= $a['nom_pok'] ?></li>
+	   	     	     	<li><?= $a['type1_pok'] ?></li>
 	   	     	    <?php }
 	   	     	 ?>
 	   	     </ul>
