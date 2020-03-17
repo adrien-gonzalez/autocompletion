@@ -73,14 +73,21 @@ function ajax()
 $(document).ready(function(){
 	$("#recherche").click(function(){
   	
+
 		search = $("#search").val();
-	  	ajax();
+		if(search != "")
+		{
+	  		ajax();
+	  	}
 		});
 
 	$("#recherche_barre").click(function(){
   	
 		search = $("#search_barre").val();
-		ajax();	
+		if(search != "")
+		{
+	  		ajax();
+	  	}
 		});
 });
    
