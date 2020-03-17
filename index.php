@@ -8,7 +8,7 @@
 		<!-- MON SCRIPT -->
 		<script type="text/javascript" src="js/script.js"></script>
 	</head>
-<body class="accueil" id="pokemon">
+<body class="accueil">
 	<?php include("sources/header.php");?>
 
 <div class="form_research">
@@ -17,6 +17,7 @@
 		<input type="button" name="recherche" id="recherche" value="Rechercher">
 	</form>
 </div>
+<div id="erreur"></div>
 	
 
 </body>
