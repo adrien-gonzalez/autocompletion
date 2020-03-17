@@ -58,9 +58,11 @@ function ajax()
 			         		document.location.href = "sources/recherche.php/?search="+search;
 					}
 					else
-					{
-						$("#result-search").remove();
-						$("#pokemon").append('<div>Aucun résultat</div>');
+					{	
+						$("#erreur").fadeOut();
+						$("#erreur").fadeIn().text('Aucun résultat');
+						$("#erreur").css({"text-align" : "center", "color": "white", "font-size":"30px","margin-top": "2%", "font-weight":"bold", "text-shadow": "black 0.1em 0.1em 0.2em"});
+					
 					}
 				}
 			});
