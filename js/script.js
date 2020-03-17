@@ -1,3 +1,30 @@
+// RECUPERER LE GET SEARCH POUR RENVOYER LE RESULTAT SUR LA PAGE RECHERCHE
+
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+}
+
+
+var nom = window.location.pathname;
+if(nom == "/autocompletion/sources/recherche.php/")
+{	
+	
+		search=$_GET('search');
+		url = "../../fonctions/research.php";
+		ajax();
+}
+
 function refuserToucheEntree(event)
 {
 	    // Compatibilité IE / Firefox
@@ -26,7 +53,7 @@ function ajax()
    $.ajax({
 
 			type:"GET",
-			url:"fonctions/research.php",
+			url: url,
 			data : {search: encodeURIComponent(search)},
 		
 				success:function(data)
@@ -41,6 +68,7 @@ function ajax()
 					            nbr++;
 					        }
 				        }
+
 				            $("#result-search").remove();
 				            $("#pokemon").append('<table id="result-search"></table>');
 
@@ -55,7 +83,9 @@ function ajax()
 					         		$("#"+i).append('<td>'+ result[champ]+'</td>');
 					         	}
 			         		}
-			         		document.location.href = "sources/recherche.php/?search="+search;
+
+			         		
+
 					}
 					else
 					{	
@@ -75,21 +105,27 @@ $(document).ready(function(){
   	
 
 		search = $("#search").val();
+		url = "fonctions/research.php";
 		if(search != "")
 		{
 	  		ajax();
+	  		document.location.href = "sources/recherche.php/?search="+search;		
 	  	}
 		});
 
 	$("#recherche_barre").click(function(){
   	
 		search = $("#search_barre").val();
+		url = "fonctions/research.php";
 		if(search != "")
 		{
 	  		ajax();
+	  		document.location.href = "sources/recherche.php/?search="+search;
 	  	}
 		});
 });
    
+
+
 
 
