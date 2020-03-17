@@ -1,6 +1,4 @@
 <header>
-	<div>
-
 	<ul>
 		<li>
 			<form method="post">
@@ -9,6 +7,5 @@
 			</form>
 		</li>
 	</ul>
-	<img width="200px" src="img/Pokemon_logo.png">
-	</div>
+	<img src="../img/Pokeball.png">
 </header>
