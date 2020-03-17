@@ -7,5 +7,4 @@
 			</form>
 		</li>
 	</ul>
-	<img src="../img/Pokeball.png">
 </header>
