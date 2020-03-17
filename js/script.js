@@ -83,15 +83,16 @@ function ajax()
 					         	}
 			         		}
 
-			         		
-
+			         		if(nom != "/autocompletion/sources/recherche.php/")
+			         		{
+			         			document.location.href = "sources/recherche.php/?search="+search;
+			         		}
 					}
 					else
 					{	
 						$("#erreur").fadeOut();
 						$("#erreur").fadeIn().text('Aucun résultat');
 						$("#erreur").css({"text-align" : "center", "color": "white", "font-size":"30px","margin-top": "2%", "font-weight":"bold", "text-shadow": "black 0.1em 0.1em 0.2em"});
-					
 					}
 				}
 			});
@@ -105,10 +106,10 @@ $(document).ready(function(){
 
 		search = $("#search").val();
 		url = "fonctions/research.php";
+		
 		if(search != "")
 		{
-	  		ajax();
-	  		document.location.href = "sources/recherche.php/?search="+search;		
+	  		ajax();		
 	  	}
 		});
 
@@ -116,18 +117,10 @@ $(document).ready(function(){
   	
 		search = $("#search_barre").val();
 		url = "fonctions/research.php";
+		
 		if(search != "")
 		{
 	  		ajax();
-
-	  		if(nom == "/autocompletion/sources/recherche.php/")
-	  		{
-	  			document.location.href = "../recherche.php/?search="+search;
-	  		}
-	  		else
-	  		{
-	  			document.location.href = "sources/recherche.php/?search="+search;
-	  		}
 	  	}
 		});
 });
