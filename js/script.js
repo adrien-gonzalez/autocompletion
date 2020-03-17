@@ -45,7 +45,6 @@ function refuserToucheEntree(event)
 
 
 
-
 function ajax()
 {
 
