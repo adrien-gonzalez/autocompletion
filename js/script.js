@@ -119,7 +119,15 @@ $(document).ready(function(){
 		if(search != "")
 		{
 	  		ajax();
-	  		document.location.href = "sources/recherche.php/?search="+search;
+
+	  		if(nom == "/autocompletion/sources/recherche.php/")
+	  		{
+	  			document.location.href = "../recherche.php/?search="+search;
+	  		}
+	  		else
+	  		{
+	  			document.location.href = "sources/recherche.php/?search="+search;
+	  		}
 	  	}
 		});
 });
