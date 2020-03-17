@@ -6,6 +6,7 @@ session_start()
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="sources/style.css" rel="../css/stylesheet">
 	<meta charset="utf-8">
 	<title>resultat de recherche</title>
 </head>
@@ -25,7 +26,7 @@ session_start()
 	   	     //////////////////////////////////////:BDD/////////////////////////////////////////////////////:
 	   	   //  $bdd = new PDO('mysql:host=127.0.0.1;dbname=autocompletion;charset=utf8','root',' ');
 	   	     $bdd = new PDO('mysql:host=localhost;dbname=autocompletion', 'root', '');
-	  
+
 
 	   	     $articlesPok = $bdd->query('SELECT * FROM pokemon ORDER BY id DESC ');
 
@@ -46,8 +47,15 @@ session_start()
 	   	     	     while ($a = $articlesPok->fetch()) 
 
 	   	     	     { ?>
-	   	     	     	<li><?= $a['nom_pok'] ?></li>
-	   	     	     	<li><?= $a['type1_pok'] ?></li>
+	   	     	     	<li>Nom :<?= $a['nom_pok'] ?></li>
+	   	     	     	<li>type 1 :<?= $a['type1_pok'] ?></li>
+	   	     	     	<li>Type 2 :<?= $a['type2_pok'] ?></li>
+	   	     	     	<li>HP :<?= $a['HP'] ?></li>
+	   	     	     	<li>Attaque :<?= $a['Attaque'] ?></li>
+	   	     	     	<li>Defense :<?= $a['Defense'] ?></li>
+	   	     	     	<li>Sp_Attaque :<?= $a['Sp_Attaque'] ?></li>
+	   	     	     	<li>Sp_Defense :<?= $a['Sp_Defense'] ?></li>
+	   	     	     	
 	   	     	    <?php }
 	   	     	 ?>
 	   	     </ul>
