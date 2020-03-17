@@ -13,6 +13,7 @@
 
 
 
+
 <div class="form_research">
 	<img width="350px" src="img/Pokemon_logo.png">
 	<form class="research" method="get">
