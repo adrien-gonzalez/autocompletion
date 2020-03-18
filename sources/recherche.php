@@ -4,7 +4,7 @@
 	<link href="../style.css" rel="stylesheet">
 	<script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
 		<!-- MON SCRIPT -->
-		<script type="text/javascript" src="../../js/script.js"></script>
+	<script type="text/javascript" src="../../js/script.js"></script>
 	<title>resultat de recherche</title>
 </head>
 <body class="recherche">

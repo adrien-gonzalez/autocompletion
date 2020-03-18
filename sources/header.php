@@ -7,4 +7,7 @@
 			</form>
 		</li>
 	</ul>
+		
+		<button id="accueil">Accueil</button>
+
 </header>

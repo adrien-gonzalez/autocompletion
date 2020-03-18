@@ -149,18 +149,36 @@ header{
 	width: 100%;
 	background-color: rgba(37, 71, 127, .75);
 	height: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+
+header button{
+
+	padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#478bf9;
+	color:#fff;
+	border-radius:20px;
+	width:100px;
+	border:none;
+	transition: 0.5s;
+}
+
+header button:hover{
+
+	cursor: pointer;
+	background: #25477F;
 }
 
 ul{
-	height: 133%;
+	height: 65%;
 	display: flex;
 	align-items: center;
 }
 li{
 
-	list-style: none;
-
-	
+	list-style: none;	
 }
 
 
