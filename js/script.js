@@ -65,7 +65,8 @@ function ajax()
 		
 			success:function(data)
 			{
-				if(data != "")
+
+				if(data != "" && search.length > 2)
 				{	
 					var nbr=0;
 				    for(i=0; i<Object.keys(data).length;i++)
@@ -77,7 +78,8 @@ function ajax()
 				    }
 
 				    $("#result-search").remove();
-				    $("#pokemon").append('<form method="get" id="result-search"></form>');
+				    $("#pokemon").append('<div id="result-search"></div>');
+				    $("#result-search").append('<form method="get" id="form"></form>');
 
 				    for(i=0; i < nbr; i++)
 			        {
@@ -88,8 +90,9 @@ function ajax()
 					    {
 					        var champ = Object.keys(result)[j];
 					        var champ2 = Object.keys(result)[j+1];
-		
-					        $("#result-search").append('<input id='+result[champ]+' onclick="lireID(this)" type="button" value='+ result[champ2]+'>');
+					        $("#form").append('<div id='+result[champ]+'></div>');
+							$("#"+result[champ]).append('<img width="40px" src="../../img/Pokeball.png">')
+					        $("#"+result[champ]).append('<input id='+result[champ]+' onclick="lireID(this)" type="button" value='+ result[champ2]+'>');
 					        j++;
 					    }
 			        }
@@ -106,6 +109,7 @@ function ajax()
 				}
 				else
 				{	
+					$("#result-search").remove();
 					$("#erreur").fadeOut();
 					$("#erreur").fadeIn().text('Aucun résultat');
 					$("#erreur").css({"text-align" : "center", "color": "white", "font-size":"30px","margin-top": "2%", "font-weight":"bold", "text-shadow": "black 0.1em 0.1em 0.2em"});
@@ -123,10 +127,8 @@ $(document).ready(function(){
 		search = $("#search").val();
 		url = "fonctions/research.php";
 		
-		if(search != "")
-		{
-	  		ajax();		
-	  	}
+	  	ajax();		
+	  	
 		});
 
 	$("#recherche_barre").click(function(){
@@ -134,10 +136,8 @@ $(document).ready(function(){
 		search = $("#search_barre").val();
 		url = "fonctions/research.php";
 		
-		if(search != "")
-		{
-	  		ajax();
-	  	}
+	  	ajax();
+	  	
 		});	
 });
 
