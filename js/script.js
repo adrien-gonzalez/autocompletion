@@ -27,13 +27,14 @@ function $_GET(param) {
 var url_current_page = window.location.pathname;
 if(url_current_page == "/autocompletion/sources/recherche.php/")
 {	
-	
+	$(".recherhe").append('<button id="accueil">Accueil</button');
 		search=$_GET('search');
 		url = "../../fonctions/research.php";	
 	
 		ajax();
 		
 }
+
 
 function refuserToucheEntree(event)
 {
@@ -65,7 +66,7 @@ function ajax()
 		
 			success:function(data)
 			{
-
+				console.log(data);
 				if(data != "" && search.length > 2)
 				{	
 					var nbr=0;
@@ -138,7 +139,22 @@ $(document).ready(function(){
 		
 	  	ajax();
 	  	
-		});	
+	});	
+
+	$("#accueil").click(function(){
+
+			var url = window.location.pathname;
+
+			if (url != "/autocompletion/index.php" && url != "/autocompletion/")
+			{
+				document.location.href = "../../";
+			}
+			else
+			{
+				document.location.href = "";
+			}
+			
+	});
 });
 
 
