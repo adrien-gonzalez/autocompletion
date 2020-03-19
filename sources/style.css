@@ -184,5 +184,30 @@ li{
 
 
 
+.oc-section-element
+{
+text-align: center;
+    /* margin-top: 10%; */
+    border: solid gold;
+    width: 45%;
+    margin: auto;
+    margin-top: 10%;
+    padding: 2%;
+    background-color: #478bf9a8;
+    color: white;
+    text-shadow: 2px 2px 2px #1165aeed;
+    box-shadow: 7px 7px 12px black;
+}
+.oc-body-element
+{
+	background-image: url(../img/pokemon-go.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+	background-attachment:fixed
+}
+
+
+
+
 
 
