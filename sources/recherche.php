@@ -11,7 +11,13 @@
 	<!--////////////////////////////////////////////////HEADER/////////////////////////////////////////////////////-->
 	   	
 
-	   	<?php include("header.php");?>
+	   	<?php include("header.php");
+
+	   	if(!isset($_GET['search']))
+	   	{
+	   		header('Location: ../../index.php');
+	   	}
+	   	?>
 
 	
 
