@@ -181,11 +181,15 @@ $(document).ready(function(){
 	autocompletion=0;
 	$("#recherche").click(function(){
   	
+		
 
 		search = $("#search").val();
 		url = "fonctions/research.php";
 		
-	  	ajax();		
+		if(search.length > 2)
+		{
+	  		ajax();	
+	  	}	
 	  	
 		});
 
