@@ -206,6 +206,22 @@ text-align: center;
 	background-attachment:fixed
 }
 
+.auto{
+
+	background-color: white; 
+	width: 240px;
+	border: none;
+
+}
+
+.auto:hover{
+
+	cursor:pointer;
+	background-color: #D5D8DC ;
+}
+
+
+
 
 
 

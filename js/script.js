@@ -1,5 +1,6 @@
 // RECUPERER LE GET SEARCH POUR RENVOYER LE RESULTAT SUR LA PAGE RECHERCHE
 
+
 function lireID(that)
 {
 	var id = that.id;
@@ -28,11 +29,19 @@ var url_current_page = window.location.pathname;
 if(url_current_page == "/autocompletion/sources/recherche.php/")
 {	
 	$(".recherhe").append('<button id="accueil">Accueil</button');
+		
+
 		search=$_GET('search');
 		url = "../../fonctions/research.php";	
 	
 		ajax();
 		
+}
+
+if(url_current_page == "/autocompletion/sources/element.php/")
+{	
+
+	url = "../../fonctions/research.php";
 }
 
 
@@ -60,6 +69,8 @@ function refuserToucheEntree(event)
 
 function ajax()
 {
+
+
 	$.ajax({
 
 		type:"GET",
@@ -68,8 +79,7 @@ function ajax()
 			
 			success:function(data)
 			{
-				console.log(data);
-				if(data != "" && search.length > 2)
+				if((data != "" && search.length > 2)||(autocompletion == 1))
 				{	
 					var nbr=0;
 				    for(i=0; i<Object.keys(data).length;i++)
@@ -100,15 +110,56 @@ function ajax()
 					    }
 			        }
 
-			        if(url_current_page != "/autocompletion/sources/recherche.php/")
-			        {
-			         	document.location.href = "sources/recherche.php/?search="+search;
-			        }
-			        else if(url == "fonctions/research.php" && url_current_page == "/autocompletion/sources/recherche.php/")
-			        {
-			         	document.location.href = "../recherche.php/?search="+search;
-			        }
 			       
+			        if(autocompletion == 0)
+			        {
+				        if(url_current_page != "/autocompletion/sources/recherche.php/")
+				        {
+				         	document.location.href = "sources/recherche.php/?search="+search;
+				        }
+				        else if(url == "fonctions/research.php" && url_current_page == "/autocompletion/sources/recherche.php/")
+				        {
+				         	document.location.href = "../recherche.php/?search="+search;
+				        }
+			    	}
+			    	else
+			    	{
+			    		$('#results').empty();
+			    		var identique=0;			    	
+			    		var tab=[];
+
+			    		
+				    	for(i=0; i < nbr; i++)
+				        {
+				        	
+				        	var result = JSON.parse(data)[i]; 				 			    		
+				    		for(j=0;j < Object.keys(result).length; j++ )
+							{
+						  		
+						        var champ = Object.keys(result)[j];
+						        var champ2 = Object.keys(result)[j+1];
+
+						        tab.push(result[champ2]);
+						      			       	
+						        j++;
+						  	}	
+						}
+
+						for(p=0; p < tab.length; p++)
+						{
+
+						    $('#'+tab[p]).remove();    
+
+						}
+
+
+						for(p=0; p < tab.length; p++)
+						{
+
+							$('#results').append('<div onclick="getId(this)" class="auto" id='+tab[p]+'>'+tab[p]+'</div>');    
+
+						}	       
+			    	}
 
 				}
 				else
@@ -125,6 +176,9 @@ function ajax()
 
 
 $(document).ready(function(){
+
+
+	autocompletion=0;
 	$("#recherche").click(function(){
   	
 
@@ -168,7 +222,68 @@ $(document).ready(function(){
 			}
 			
 	});
+
+	$("#search").click(function(){
+
+		 $("#search_barre").val("");
+		 $('#results').empty();
+	});
+
+
+	$( "#search_barre" ).focus(function() {
+
+	var keylogger = document.getElementById('search_barre');
+	window.addEventListener('keydown', function(event){
+   
+    var key = event.key;
+
+    search = $("#search_barre").val();
+
+    var url_current_page = window.location.pathname;
+
+	if (url_current_page != "/autocompletion/index.php" &&  url_current_page != "/autocompletion/")
+	{
+		url = "../../fonctions/research.php";	
+	}
+	else
+	{
+		url = "fonctions/research.php";
+	}
+
+	if((search.length > 1)&&(key != "Backspace") && (key != "CapsLock") &&(key != "Enter") && (key != ""))
+	{
+		autocompletion=1;
+    	ajax();
+    }
+	
+		});
+	});
+
+	$("main").click(function(){
+
+		$('#results').empty();
+
+	});
+
+	$(".auto").focus(function(){
+
+		console.log("ok");
+
+	});
+
+
+
+	
 });
+
+	function getId(monId) {  
+
+	id=monId.id;
+	$("#search_barre").val(id);     
+	$('#results').empty();
+	
+}
+
 
 
 

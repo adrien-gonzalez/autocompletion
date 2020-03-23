@@ -11,7 +11,7 @@
 <body class="accueil">
 	<?php include("sources/header.php");?>
 
-
+<main>
 
 
 <div class="form_research">
@@ -23,6 +23,6 @@
 </div>
 <div id="erreur"></div>
 	
-
+</main>
 </body>
 </html>
