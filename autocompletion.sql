@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 17 mars 2020 à 08:07
+-- Généré le :  mar. 24 mars 2020 à 10:07
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -81,10 +81,10 @@ INSERT DELAYED INTO `pokemon` (`id`, `nom_pok`, `type1_pok`, `type2_pok`, `HP`, 
 (50, 'Taupiqueur', 'Sol', '', '10', '55', '25', '35', '45', '95'),
 (27, 'Sabelette', 'Sol', '', '50', '75', '85', '20', '30', '40'),
 (28, 'Sablaireau', 'Sol', '', '75', '100', '110', '45', '55', '65'),
-(29, 'Nidoran (femelle)', 'Poison', '', '55', '47', '52', '40', '40', '41'),
+(29, 'Nidoran_femelle', 'Poison', '', '55', '47', '52', '40', '40', '41'),
 (30, 'Nidorina', 'Poison', '', '70', '62', '67', '55', '55', '56'),
 (31, 'Nidoqueen', 'Poison', 'Sol', '90', '92', '87', '75', '85', '76'),
-(32, 'Nidoran (mâle)', 'Poison', '', '46', '57', '40', '40', '40', '50'),
+(32, 'Nidoran _male', 'Poison', '', '46', '57', '40', '40', '40', '50'),
 (33, 'Nidorino', 'Poison', '', '61', '72', '57', '55', '55', '65'),
 (34, 'Nidoking', 'Poison', 'Sol', '81', '102', '77', '85', '75', '85'),
 (35, 'Mélofée', 'Fée ', '', '70', '45', '48', '60', '65', '35'),
