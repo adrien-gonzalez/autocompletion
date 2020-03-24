@@ -259,6 +259,11 @@ $(document).ready(function(){
 		autocompletion=1;
     	ajax();
     }
+    if(key == "Backspace")
+    {
+    	console.log("ok");
+    	$('#results').empty();
+    }
 	
 		});
 	});
